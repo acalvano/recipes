@@ -73,6 +73,7 @@
     <string name="category_starters">starters</string>
     <string name="category_side_dishes">side_dishes</string>
     <string name="category_dinner">dinner</string>
+    <string name="category_breads">breads</string>
 
     <!-- Toast message in editor when new recipe has been successfully inserted [CHAR LIMIT=NONE] -->
     <string name="editor_insert_recipe_successful">Recipe saved</string>
