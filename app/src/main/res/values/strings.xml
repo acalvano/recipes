@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2016 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Name for the application [CHAR LIMIT=12] -->
+    <string name="app_name">Recipes</string>
+
+    <!-- Label for overflow menu option that inserts fake Recipe data into the app [CHAR LIMIT=20] -->
+    <string name="action_insert_dummy_data">Insert Dummy Data</string>
+
+    <!-- Label for overflow menu option that deletes all Recipe data in the app [CHAR LIMIT=20] -->
+    <string name="action_delete_all_entries">Delete All Recipes</string>
+
+    <!-- Title for the activity to add a new recipe [CHAR LIMIT=20] -->
+    <string name="editor_activity_title_new_recipe">Add a Recipe</string>
+    <string name="editor_activity_title_edit_recipe">Edit a Recipe</string>
+
+    <!-- Label for editor menu option to save recipe and leave editor [CHAR LIMIT=20] -->
+    <string name="action_save">Save</string>
+
+    <!-- Label for editor overflow menu option that deletes the current recipe [CHAR LIMIT=20] -->
+    <string name="action_delete">Delete</string>
+
+    <!-- Label for overview category of attributes in the editor [CHAR LIMIT=30] -->
+    <string name="recipe_name">Name</string>
+
+    <!-- Label for gender information in the editor [CHAR LIMIT=30] -->
+    <string name="recipe_category">Category</string>
+
+    <!-- Label for measurement information in the editor [CHAR LIMIT=30] -->
+    <string name="recipe_yield">Yield</string>
+
+    <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_recipe_name">Recipe Name</string>
+
+    <!-- Text hint for breed field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_recipe_servings">Servings</string>
+
+    <!-- Text hint for name field in the editor [CHAR LIMIT=30] -->
+    <string name="hint_recipe_yield">Yield</string>
+
+    <!-- Units for weight of the recipe (kilograms) [CHAR LIMIT=5] -->
+    <string name="unit_recipe_yield">cups</string>
+
+
+    <string name="category_unknown">Unknown</string>
+    <string name="category_soups">Soups</string>
+    <string name="category_sauces">Sauces</string>
+    <string name="category_eggs">eggs</string>
+    <string name="category_entrees">entrees</string>
+    <string name="category_lunch">lunch</string>
+    <string name="category_fish">fish</string>
+    <string name="category_poultry">poultry</string>
+    <string name="category_meat">meat</string>
+    <string name="category_vegetables">vegetables</string>
+    <string name="category_cold_buffet">cold_buffet</string>
+    <string name="category_hot_buffet">hot_buffet</string>
+    <string name="category_desserts">desserts</string>
+    <string name="category_cakes">cakes</string>
+    <string name="category_pies">pies</string>
+    <string name="category_breakfast">breakfast</string>
+    <string name="category_salads">salads</string>
+    <string name="category_appetizers">appetizers</string>
+    <string name="category_starters">starters</string>
+    <string name="category_side_dishes">side_dishes</string>
+    <string name="category_dinner">dinner</string>
+
+    <!-- Toast message in editor when new recipe has been successfully inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_recipe_successful">Recipe saved</string>
+
+    <!-- Toast message in editor when new recipe has failed to be inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_insert_recipe_failed">Error with saving recipe</string>
+
+    <!-- Toast message in editor when new recipe has been successfully inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_update_recipe_successful">Recipe updated</string>
+
+    <!-- Toast message in editor when new recipe has failed to be inserted [CHAR LIMIT=NONE] -->
+    <string name="editor_update_recipe_failed">Error updating recipe</string>
+
+    <!-- Title text for the empty view, which describes the empty dog house image [CHAR LIMIT=50] -->
+    <string name="empty_view_title_text">It\'s a bit lonely here...</string>
+
+    <!-- Subtitle text for the empty view that prompts the user to add a recipe [CHAR LIMIT=50] -->
+    <string name="empty_view_subtitle_text">Get started by adding a recipe</string>
+
+    <!-- Dialog message when user is leaving editor but hasn't saved changes [CHAR LIMIT=NONE] -->
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+
+    <!-- Dialog button text for the option to discard a user's changes [CHAR LIMIT=20] -->
+    <string name="discard">Discard</string>
+
+    <!-- Dialog button text for the option to keep editing the current recipe [CHAR LIMIT=20] -->
+    <string name="keep_editing">Keep Editing</string>
+
+    <!-- Toast message in editor when current recipe was successfully deleted [CHAR LIMIT=NONE] -->
+    <string name="editor_delete_recipe_successful">Recipe deleted</string>
+
+    <!-- Toast message in editor when current recipe has failed to be deleted [CHAR LIMIT=NONE] -->
+    <string name="editor_delete_recipe_failed">Error with deleting recipe</string>
+
+    <!-- Dialog message to ask the user to confirm deleting the current recipe [CHAR LIMIT=NONE] -->
+    <string name="delete_dialog_msg">Delete this recipe?</string>
+
+    <!-- Dialog button text for the option to confirm deleting the current recipe [CHAR LIMIT=20] -->
+    <string name="delete">Delete</string>
+
+    <!-- Dialog button text for the option to cancel deletion of the current recipe [CHAR LIMIT=20] -->
+    <string name="cancel">Cancel</string>
+
+    <!-- Label for the recipe's breed if the breed is unknown [CHAR LIMIT=20] -->
+    <string name="unknown_category">Unknown category</string>
+
+</resources>
