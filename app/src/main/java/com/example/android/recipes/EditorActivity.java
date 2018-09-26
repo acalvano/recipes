@@ -146,6 +146,8 @@ public class EditorActivity extends AppCompatActivity implements
                         mCategory = RecipeEntry.CATEGORY_SIDE_DISHES;
                     } else if (selection.equals(getString(R.string.category_dinner))) {
                         mCategory = RecipeEntry.CATEGORY_DINNER;
+                    } else if (selection.equals(getString(R.string.category_breads))) {
+                        mCategory = RecipeEntry.CATEGORY_BREADS;
                     } else {
                         mCategory = RecipeEntry.CATEGORY_UNKNOWN;
                     }
@@ -382,6 +384,9 @@ public class EditorActivity extends AppCompatActivity implements
                     break;
                 case RecipeEntry.CATEGORY_DINNER:
                     mCategorySpinner.setSelection(20);
+                    break;
+                case RecipeEntry.CATEGORY_BREADS:
+                    mCategorySpinner.setSelection(21);
                     break;
                 default:
                     mCategorySpinner.setSelection(0);

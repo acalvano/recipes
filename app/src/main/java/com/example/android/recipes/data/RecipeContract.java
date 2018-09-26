@@ -51,10 +51,11 @@ public final class RecipeContract {
         public static final int CATEGORY_STARTERS = 18;
         public static final int CATEGORY_SIDE_DISHES = 19;
         public static final int CATEGORY_DINNER = 20;
+        public static final int CATEGORY_BREADS = 21;
 
 
         public static boolean isValidCategory(int category) {
-            if (category >= CATEGORY_UNKNOWN && category <= CATEGORY_DINNER ) {
+            if (category >= CATEGORY_UNKNOWN && category <= CATEGORY_BREADS ) {
                 return true;
             }
             return false;
