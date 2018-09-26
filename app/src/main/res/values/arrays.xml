@@ -34,6 +34,8 @@
         <item>@string/category_starters</item>
         <item>@string/category_side_dishes</item>
         <item>@string/category_dinner</item>
+        <item>@string/category_breads</item>
+
     </string-array>
 </resources>
 
