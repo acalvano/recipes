@@ -28,6 +28,7 @@ public final class RecipeContract {
         public final static String COLUMN_RECIPE_CATEGORY = "category";
         public final static String COLUMN_RECIPE_SERVINGS = "servings";
         public final static String COLUMN_RECIPE_YIELD = "yield";
+        public final static String COLUMN_RECIPE_UNIT = "unit";
         public final static String COLUMN_RECIPE_INSTRUCTIONS = "edit_recipe_instructions";
 
         public static final int CATEGORY_UNKNOWN = 0;
@@ -53,9 +54,43 @@ public final class RecipeContract {
         public static final int CATEGORY_DINNER = 20;
         public static final int CATEGORY_BREADS = 21;
 
+        public static final int UNIT_UNKNOWN = 0;
+        public static final int UNIT_TEASPOON = 1;
+        public static final int UNIT_TABLESPOON = 2;
+        public static final int UNIT_FLUID_OUNCE = 3;
+        public static final int UNIT_GILL = 4;
+        public static final int UNIT_CUP = 5;
+        public static final int UNIT_PINT = 6;
+        public static final int UNIT_QUART = 7;
+        public static final int UNIT_GALLON = 8;
+        public static final int UNIT_MILLILITER = 9;
+        public static final int UNIT_LITER = 10;
+        public static final int UNIT_DECILITER = 11;
+        public static final int UNIT_POUND = 12;
+        public static final int UNIT_OUNCE = 13;
+        public static final int UNIT_MILLIGRAM = 14;
+        public static final int UNIT_GRAM = 15;
+        public static final int UNIT_KILOGRAM = 16;
+        public static final int UNIT_MILLIMETER = 17;
+        public static final int UNIT_CENTIMETER = 18;
+        public static final int UNIT_METER = 19;
+        public static final int UNIT_INCH = 20;
+        public static final int UNIT_BUNCH = 21;
+        public static final int UNIT_CLOVE = 22;
+        public static final int UNIT_PINCH = 23;
+        public static final int UNIT_SPRIG = 24;
+        public static final int UNIT_STRIP = 25;
+
 
         public static boolean isValidCategory(int category) {
             if (category >= CATEGORY_UNKNOWN && category <= CATEGORY_BREADS ) {
+                return true;
+            }
+            return false;
+        }
+
+        public static boolean isValidUnit(int unit) {
+            if (unit >= UNIT_UNKNOWN && unit <= UNIT_STRIP ) {
                 return true;
             }
             return false;

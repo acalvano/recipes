@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2016 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2016 The Android Open Source Project
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
@@ -35,7 +34,36 @@
         <item>@string/category_side_dishes</item>
         <item>@string/category_dinner</item>
         <item>@string/category_breads</item>
-
     </string-array>
-</resources>
+
+    <string-array name="array_unit_options">
+        <item>@string/unit_unknown</item>
+        <item>@string/unit_teaspoon</item>
+        <item>@string/unit_tablespoon</item>
+        <item>@string/unit_fluid_ounce</item>
+        <item>@string/unit_gill</item>
+        <item>@string/unit_cup</item>
+        <item>@string/unit_pint</item>
+        <item>@string/unit_quart</item>
+        <item>@string/unit_gallon</item>
+        <item>@string/unit_milliliter</item>
+        <item>@string/unit_liter</item>
+        <item>@string/unit_deciliter</item>
+        <item>@string/unit_pound</item>
+        <item>@string/unit_ounce</item>
+        <item>@string/unit_milligram</item>
+        <item>@string/unit_gram</item>
+        <item>@string/unit_kilogram</item>
+        <item>@string/unit_millimeter</item>
+        <item>@string/unit_centimeter</item>
+        <item>@string/unit_meter</item>
+        <item>@string/unit_inch</item>
+        <item>@string/unit_bunch</item>
+        <item>@string/unit_clove</item>
+        <item>@string/unit_pinch</item>
+        <item>@string/unit_sprig</item>
+        <item>@string/unit_strip</item>
+    </string-array></resources>
+
+
 

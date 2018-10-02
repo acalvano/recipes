@@ -103,6 +103,11 @@ public class RecipeProvider extends ContentProvider {
             throw new IllegalArgumentException("Recipe requires valid yield");
         }
 
+        String unit = values.getAsString(RecipeEntry.COLUMN_RECIPE_UNIT);
+        if (unit == null) {
+            throw new IllegalArgumentException("Recipe requires a unit of measure");
+        }
+
 
 
         SQLiteDatabase database = mDbHelper.getWritableDatabase();

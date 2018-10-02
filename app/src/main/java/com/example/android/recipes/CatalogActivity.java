@@ -66,7 +66,8 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         values.put(RecipeEntry.COLUMN_RECIPE_NAME, "Grilled Cheese");
         values.put(RecipeEntry.COLUMN_RECIPE_SERVINGS, 1);
         values.put(RecipeEntry.COLUMN_RECIPE_CATEGORY, "5");
-        values.put(RecipeEntry.COLUMN_RECIPE_YIELD, 1);
+        values.put(RecipeEntry.COLUMN_RECIPE_YIELD, 0);
+        values.put(RecipeEntry.COLUMN_RECIPE_UNIT, "0");
         values.put(RecipeEntry.COLUMN_RECIPE_INSTRUCTIONS, "1 Place the cheese between two pieces of bread\n\n" +
             "2 Butter the outside of one piece of bread and place in a pan over low heat with the buttered side down\n\n" +
             "3 Butter the top piece of bread\n\n" +
@@ -107,6 +108,7 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
                 RecipeEntry.COLUMN_RECIPE_SERVINGS,
                 RecipeEntry.COLUMN_RECIPE_CATEGORY,
                 RecipeEntry.COLUMN_RECIPE_YIELD,
+                RecipeEntry.COLUMN_RECIPE_UNIT,
                 RecipeEntry.COLUMN_RECIPE_INSTRUCTIONS,
         };
 

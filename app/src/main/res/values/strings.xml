@@ -75,6 +75,33 @@
     <string name="category_dinner">dinner</string>
     <string name="category_breads">breads</string>
 
+    <string name="unit_unknown">Unknown</string>
+    <string name="unit_teaspoon">teaspoon</string>
+    <string name="unit_tablespoon">tablespoon</string>
+    <string name="unit_fluid_ounce">fluid ounce</string>
+    <string name="unit_gill">gill</string>
+    <string name="unit_cup">cup</string>
+    <string name="unit_pint">pint</string>
+    <string name="unit_quart">quart</string>
+    <string name="unit_gallon">gallon</string>
+    <string name="unit_milliliter">milliliter</string>
+    <string name="unit_liter">liter</string>
+    <string name="unit_deciliter">deciliter</string>
+    <string name="unit_pound">pound</string>
+    <string name="unit_ounce">ounce</string>
+    <string name="unit_milligram">milligram</string>
+    <string name="unit_gram">gram</string>
+    <string name="unit_kilogram">kilogram</string>
+    <string name="unit_millimeter">millimeter</string>
+    <string name="unit_centimeter">centimeter</string>
+    <string name="unit_meter">meter</string>
+    <string name="unit_inch">inch</string>
+    <string name="unit_bunch">bunch</string>
+    <string name="unit_clove">clove</string>
+    <string name="unit_pinch">pinch</string>
+    <string name="unit_sprig">sprig</string>
+    <string name="unit_strip">strip</string>
+
     <!-- Toast message in editor when new recipe has been successfully inserted [CHAR LIMIT=NONE] -->
     <string name="editor_insert_recipe_successful">Recipe saved</string>
 

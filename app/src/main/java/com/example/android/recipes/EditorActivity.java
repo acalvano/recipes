@@ -36,15 +36,17 @@ public class EditorActivity extends AppCompatActivity implements
 
     private EditText mServingsEditText;
 
-    private EditText mCategoryEditText;
-
     private EditText mYieldEditText;
 
     private EditText mInstructionsEditText;
 
     private Spinner mCategorySpinner;
 
+    private Spinner mUnitSpinner;
+
     private int mCategory = RecipeEntry.CATEGORY_UNKNOWN;
+
+    private int mUnit = RecipeEntry.UNIT_UNKNOWN;
 
     private boolean mRecipeHasChanged = false;
 
@@ -78,6 +80,7 @@ public class EditorActivity extends AppCompatActivity implements
         mNameEditText = (EditText) findViewById(R.id.edit_recipe_name);
         mServingsEditText = (EditText) findViewById(R.id.edit_recipe_servings);
         mCategorySpinner = (Spinner) findViewById(R.id.spinner_category);
+        mUnitSpinner = (Spinner) findViewById(R.id.spinner_unit);
         mYieldEditText = (EditText) findViewById(R.id.edit_recipe_yield);
         mInstructionsEditText = (EditText) findViewById(R.id.edit_recipe_instructions);
 
@@ -85,26 +88,29 @@ public class EditorActivity extends AppCompatActivity implements
         mNameEditText.setOnTouchListener(mTouchListener);
         mServingsEditText.setOnTouchListener(mTouchListener);
         mCategorySpinner.setOnTouchListener(mTouchListener);
+        mUnitSpinner.setOnTouchListener(mTouchListener);
         mYieldEditText.setOnTouchListener(mTouchListener);
         mInstructionsEditText.setOnTouchListener(mTouchListener);
 
 
-        setupSpinner();
+        setupCategorySpinner();
+        setupUnitSpinner();
+
     }
 
-    private void setupSpinner() {
+    private void setupCategorySpinner() {
 
-        ArrayAdapter genderSpinnerAdapter = ArrayAdapter.createFromResource(this,
+        ArrayAdapter categorySpinnerAdapter = ArrayAdapter.createFromResource(this,
                 R.array.array_category_options, android.R.layout.simple_spinner_item);
 
-        genderSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        categorySpinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 
-        mCategorySpinner.setAdapter(genderSpinnerAdapter);
+        mCategorySpinner.setAdapter(categorySpinnerAdapter);
 
         mCategorySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selection = (String) parent.getItemAtPosition(position);  //mCategory=0
+                String selection = (String) parent.getItemAtPosition(position);
                 if (!TextUtils.isEmpty(selection)) {
                     if (selection.equals(getString(R.string.category_soups))) {
                         mCategory = RecipeEntry.CATEGORY_SOUPS;
@@ -161,6 +167,83 @@ public class EditorActivity extends AppCompatActivity implements
         });
     }
 
+    private void setupUnitSpinner() {
+
+        ArrayAdapter unitSpinnerAdapter = ArrayAdapter.createFromResource(this,
+                R.array.array_unit_options, android.R.layout.simple_spinner_item);
+
+        unitSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+
+        mUnitSpinner.setAdapter(unitSpinnerAdapter);
+
+        mUnitSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selection = (String) parent.getItemAtPosition(position);
+                if (!TextUtils.isEmpty(selection)) {
+                    if (selection.equals(getString(R.string.unit_teaspoon))) {
+                        mUnit = RecipeEntry.UNIT_TEASPOON;
+                    } else if (selection.equals(getString(R.string.unit_tablespoon))) {
+                        mUnit = RecipeEntry.UNIT_TABLESPOON;
+                    } else if (selection.equals(getString(R.string.unit_fluid_ounce))) {
+                        mUnit = RecipeEntry.UNIT_FLUID_OUNCE;
+                    } else if (selection.equals(getString(R.string.unit_gill))) {
+                        mUnit = RecipeEntry.UNIT_GILL;
+                    } else if (selection.equals(getString(R.string.unit_cup))) {
+                        mUnit = RecipeEntry.UNIT_CUP;
+                    } else if (selection.equals(getString(R.string.unit_pint))) {
+                        mUnit = RecipeEntry.UNIT_PINT;
+                    } else if (selection.equals(getString(R.string.unit_quart))) {
+                        mUnit = RecipeEntry.UNIT_QUART;
+                    } else if (selection.equals(getString(R.string.unit_gallon))) {
+                        mUnit = RecipeEntry.UNIT_GALLON;
+                    } else if (selection.equals(getString(R.string.unit_milliliter))) {
+                        mUnit = RecipeEntry.UNIT_MILLILITER;
+                    } else if (selection.equals(getString(R.string.unit_liter))) {
+                        mUnit = RecipeEntry.UNIT_LITER;
+                    } else if (selection.equals(getString(R.string.unit_deciliter))) {
+                        mUnit = RecipeEntry.UNIT_DECILITER;
+                    } else if (selection.equals(getString(R.string.unit_pound))) {
+                        mUnit = RecipeEntry.UNIT_POUND;
+                    } else if (selection.equals(getString(R.string.unit_ounce))) {
+                        mUnit = RecipeEntry.UNIT_OUNCE;
+                    } else if (selection.equals(getString(R.string.unit_milligram))) {
+                        mUnit = RecipeEntry.UNIT_MILLIGRAM;
+                    } else if (selection.equals(getString(R.string.unit_gram))) {
+                        mUnit = RecipeEntry.UNIT_GRAM;
+                    } else if (selection.equals(getString(R.string.unit_kilogram))) {
+                        mUnit = RecipeEntry.UNIT_KILOGRAM;
+                    } else if (selection.equals(getString(R.string.unit_millimeter))) {
+                        mUnit = RecipeEntry.UNIT_MILLIMETER;
+                    } else if (selection.equals(getString(R.string.unit_centimeter))) {
+                        mUnit = RecipeEntry.UNIT_CENTIMETER;
+                    } else if (selection.equals(getString(R.string.unit_meter))) {
+                        mUnit = RecipeEntry.UNIT_METER;
+                    } else if (selection.equals(getString(R.string.unit_inch))) {
+                        mUnit = RecipeEntry.UNIT_INCH;
+                    } else if (selection.equals(getString(R.string.unit_bunch))) {
+                        mUnit = RecipeEntry.UNIT_BUNCH;
+                    } else if (selection.equals(getString(R.string.unit_clove))) {
+                        mUnit = RecipeEntry.UNIT_CLOVE;
+                    } else if (selection.equals(getString(R.string.unit_pinch))) {
+                        mUnit = RecipeEntry.UNIT_PINCH;
+                    } else if (selection.equals(getString(R.string.unit_sprig))) {
+                        mUnit = RecipeEntry.UNIT_SPRIG;
+                    } else if (selection.equals(getString(R.string.unit_strip))) {
+                        mUnit = RecipeEntry.UNIT_STRIP;
+                    } else {
+                        mUnit = RecipeEntry.UNIT_UNKNOWN;
+                    }
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                mUnit = RecipeEntry.UNIT_UNKNOWN;
+            }
+        });
+    }
+
     private void saveRecipe() {
 
         String nameString = mNameEditText.getText().toString().trim();
@@ -174,10 +257,17 @@ public class EditorActivity extends AppCompatActivity implements
             return;
         }
 
+        if (mCurrentRecipeUri == null &&
+                TextUtils.isEmpty(nameString) && TextUtils.isEmpty(servingsString) &&
+                TextUtils.isEmpty(yieldString) && mUnit == RecipeEntry.UNIT_UNKNOWN) {
+            return;
+        }
+
         ContentValues values = new ContentValues();
         values.put(RecipeEntry.COLUMN_RECIPE_NAME, nameString);
         values.put(RecipeEntry.COLUMN_RECIPE_SERVINGS, servingsString);
         values.put(RecipeEntry.COLUMN_RECIPE_CATEGORY, mCategory);
+        values.put(RecipeEntry.COLUMN_RECIPE_UNIT, mUnit);
         values.put(RecipeEntry.COLUMN_RECIPE_INSTRUCTIONS,instructionsString);
 
         int yield = 0;
@@ -287,6 +377,7 @@ public class EditorActivity extends AppCompatActivity implements
                 RecipeEntry.COLUMN_RECIPE_SERVINGS,
                 RecipeEntry.COLUMN_RECIPE_CATEGORY,
                 RecipeEntry.COLUMN_RECIPE_YIELD,
+                RecipeEntry.COLUMN_RECIPE_UNIT,
                 RecipeEntry.COLUMN_RECIPE_INSTRUCTIONS};
 
         return new CursorLoader(this,
@@ -309,89 +400,180 @@ public class EditorActivity extends AppCompatActivity implements
             int servingsColumnIndex = cursor.getColumnIndex(RecipeEntry.COLUMN_RECIPE_SERVINGS);
             int categoryColumnIndex = cursor.getColumnIndex(RecipeEntry.COLUMN_RECIPE_CATEGORY);
             int yieldColumnIndex = cursor.getColumnIndex(RecipeEntry.COLUMN_RECIPE_YIELD);
+            int unitColumnIndex = cursor.getColumnIndex(RecipeEntry.COLUMN_RECIPE_UNIT);
             int instructionsColumnIndex = cursor.getColumnIndex(RecipeEntry.COLUMN_RECIPE_INSTRUCTIONS);
 
             String name = cursor.getString(nameColumnIndex);
             int servings = cursor.getInt(servingsColumnIndex);
             String category = cursor.getString(categoryColumnIndex);
             int yield = cursor.getInt(yieldColumnIndex);
+            String unit = cursor.getString(unitColumnIndex);
             String instructions = cursor.getString(instructionsColumnIndex);
 
             mNameEditText.setText(name);
             mServingsEditText.setText(Integer.toString(servings));
             mCategory = Integer.parseInt(category);
-
+            mUnit = Integer.parseInt(unit);
             mInstructionsEditText.setText(instructions);
             mYieldEditText.setText(Integer.toString(yield));
 
-            switch (mCategory) {
-                case RecipeEntry.CATEGORY_SOUPS:
-                    mCategorySpinner.setSelection(1);
-                    break;
-                case RecipeEntry.CATEGORY_SAUCES:
-                    mCategorySpinner.setSelection(2);
-                    break;
-                case RecipeEntry.CATEGORY_EGGS:
-                    mCategorySpinner.setSelection(3);
-                    break;
-                case RecipeEntry.CATEGORY_ENTREES:
-                    mCategorySpinner.setSelection(4);
-                    break;
-                case RecipeEntry.CATEGORY_LUNCH:
-                    mCategorySpinner.setSelection(5);
-                    break;
-                case RecipeEntry.CATEGORY_FISH:
-                    mCategorySpinner.setSelection(6);
-                    break;
-                case RecipeEntry.CATEGORY_POULTRY:
-                    mCategorySpinner.setSelection(7);
-                    break;
-                case RecipeEntry.CATEGORY_MEAT:
-                    mCategorySpinner.setSelection(8);
-                    break;
-                case RecipeEntry.CATEGORY_VEGETABLES:
-                    mCategorySpinner.setSelection(9);
-                    break;
-                case RecipeEntry.CATEGORY_COLD_BUFFET:
-                    mCategorySpinner.setSelection(10);
-                    break;
-                case RecipeEntry.CATEGORY_HOT_BUFFET:
-                    mCategorySpinner.setSelection(11);
-                    break;
-                case RecipeEntry.CATEGORY_DESSERTS:
-                    mCategorySpinner.setSelection(12);
-                    break;
-                case RecipeEntry.CATEGORY_CAKES:
-                    mCategorySpinner.setSelection(13);
-                    break;
-                case RecipeEntry.CATEGORY_PIES:
-                    mCategorySpinner.setSelection(14);
-                    break;
-                case RecipeEntry.CATEGORY_BREAKFAST:
-                    mCategorySpinner.setSelection(15);
-                    break;
-                case RecipeEntry.CATEGORY_SALADS:
-                    mCategorySpinner.setSelection(16);
-                    break;
-                case RecipeEntry.CATEGORY_APPETIZERS:
-                    mCategorySpinner.setSelection(17);
-                    break;
-                case RecipeEntry.CATEGORY_STARTERS:
-                    mCategorySpinner.setSelection(18);
-                    break;
-                case RecipeEntry.CATEGORY_SIDE_DISHES:
-                    mCategorySpinner.setSelection(19);
-                    break;
-                case RecipeEntry.CATEGORY_DINNER:
-                    mCategorySpinner.setSelection(20);
-                    break;
-                case RecipeEntry.CATEGORY_BREADS:
-                    mCategorySpinner.setSelection(21);
-                    break;
-                default:
-                    mCategorySpinner.setSelection(0);
-                    break;
-            }
+            setCategorySelection();
+
+            setUnitSelection();
+        }
+    }
+
+    private void setUnitSelection() {
+        switch (mUnit) {
+            case RecipeEntry.UNIT_TEASPOON:
+                mUnitSpinner.setSelection(1);
+                break;
+            case RecipeEntry.UNIT_TABLESPOON:
+                mUnitSpinner.setSelection(2);
+                break;
+            case RecipeEntry.UNIT_FLUID_OUNCE:
+                mUnitSpinner.setSelection(3);
+                break;
+            case RecipeEntry.UNIT_GILL:
+                mUnitSpinner.setSelection(4);
+                break;
+            case RecipeEntry.UNIT_CUP:
+                mUnitSpinner.setSelection(5);
+                break;
+            case RecipeEntry.UNIT_PINT:
+                mUnitSpinner.setSelection(6);
+                break;
+            case RecipeEntry.UNIT_QUART:
+                mUnitSpinner.setSelection(7);
+                break;
+            case RecipeEntry.UNIT_GALLON:
+                mUnitSpinner.setSelection(8);
+                break;
+            case RecipeEntry.UNIT_MILLILITER:
+                mUnitSpinner.setSelection(9);
+                break;
+            case RecipeEntry.UNIT_LITER:
+                mUnitSpinner.setSelection(10);
+                break;
+            case RecipeEntry.UNIT_DECILITER:
+                mUnitSpinner.setSelection(11);
+                break;
+            case RecipeEntry.UNIT_POUND:
+                mUnitSpinner.setSelection(12);
+                break;
+            case RecipeEntry.UNIT_OUNCE:
+                mUnitSpinner.setSelection(13);
+                break;
+            case RecipeEntry.UNIT_MILLIGRAM:
+                mUnitSpinner.setSelection(14);
+                break;
+            case RecipeEntry.UNIT_GRAM:
+                mUnitSpinner.setSelection(15);
+                break;
+            case RecipeEntry.UNIT_KILOGRAM:
+                mUnitSpinner.setSelection(16);
+                break;
+            case RecipeEntry.UNIT_MILLIMETER:
+                mUnitSpinner.setSelection(17);
+                break;
+            case RecipeEntry.UNIT_CENTIMETER:
+                mUnitSpinner.setSelection(18);
+                break;
+            case RecipeEntry.UNIT_METER:
+                mUnitSpinner.setSelection(19);
+                break;
+            case RecipeEntry.UNIT_INCH:
+                mUnitSpinner.setSelection(20);
+                break;
+            case RecipeEntry.UNIT_BUNCH:
+                mUnitSpinner.setSelection(21);
+                break;
+            case RecipeEntry.UNIT_CLOVE:
+                mUnitSpinner.setSelection(22);
+                break;
+            case RecipeEntry.UNIT_PINCH:
+                mUnitSpinner.setSelection(23);
+                break;
+            case RecipeEntry.UNIT_SPRIG:
+                mUnitSpinner.setSelection(24);
+                break;
+            case RecipeEntry.UNIT_STRIP:
+                mUnitSpinner.setSelection(25);
+                break;
+            default:
+                mUnitSpinner.setSelection(0);
+                break;
+        }
+    }
+
+    private void setCategorySelection() {
+        switch (mCategory) {
+            case RecipeEntry.CATEGORY_SOUPS:
+                mCategorySpinner.setSelection(1);
+                break;
+            case RecipeEntry.CATEGORY_SAUCES:
+                mCategorySpinner.setSelection(2);
+                break;
+            case RecipeEntry.CATEGORY_EGGS:
+                mCategorySpinner.setSelection(3);
+                break;
+            case RecipeEntry.CATEGORY_ENTREES:
+                mCategorySpinner.setSelection(4);
+                break;
+            case RecipeEntry.CATEGORY_LUNCH:
+                mCategorySpinner.setSelection(5);
+                break;
+            case RecipeEntry.CATEGORY_FISH:
+                mCategorySpinner.setSelection(6);
+                break;
+            case RecipeEntry.CATEGORY_POULTRY:
+                mCategorySpinner.setSelection(7);
+                break;
+            case RecipeEntry.CATEGORY_MEAT:
+                mCategorySpinner.setSelection(8);
+                break;
+            case RecipeEntry.CATEGORY_VEGETABLES:
+                mCategorySpinner.setSelection(9);
+                break;
+            case RecipeEntry.CATEGORY_COLD_BUFFET:
+                mCategorySpinner.setSelection(10);
+                break;
+            case RecipeEntry.CATEGORY_HOT_BUFFET:
+                mCategorySpinner.setSelection(11);
+                break;
+            case RecipeEntry.CATEGORY_DESSERTS:
+                mCategorySpinner.setSelection(12);
+                break;
+            case RecipeEntry.CATEGORY_CAKES:
+                mCategorySpinner.setSelection(13);
+                break;
+            case RecipeEntry.CATEGORY_PIES:
+                mCategorySpinner.setSelection(14);
+                break;
+            case RecipeEntry.CATEGORY_BREAKFAST:
+                mCategorySpinner.setSelection(15);
+                break;
+            case RecipeEntry.CATEGORY_SALADS:
+                mCategorySpinner.setSelection(16);
+                break;
+            case RecipeEntry.CATEGORY_APPETIZERS:
+                mCategorySpinner.setSelection(17);
+                break;
+            case RecipeEntry.CATEGORY_STARTERS:
+                mCategorySpinner.setSelection(18);
+                break;
+            case RecipeEntry.CATEGORY_SIDE_DISHES:
+                mCategorySpinner.setSelection(19);
+                break;
+            case RecipeEntry.CATEGORY_DINNER:
+                mCategorySpinner.setSelection(20);
+                break;
+            case RecipeEntry.CATEGORY_BREADS:
+                mCategorySpinner.setSelection(21);
+                break;
+            default:
+                mCategorySpinner.setSelection(0);
+                break;
         }
     }
 
@@ -399,8 +581,9 @@ public class EditorActivity extends AppCompatActivity implements
     public void onLoaderReset(Loader<Cursor> loader) {
         mNameEditText.setText("");
         mServingsEditText.setText("");
-        mCategorySpinner.setSelection(0); // Select "Unknown" gender
+        mCategorySpinner.setSelection(0); // Select "Unknown" category
         mYieldEditText.setText("");
+        mUnitSpinner.setSelection(0); // Select "Unknown" unit
         mInstructionsEditText.setText("");
 
     }

@@ -25,6 +25,7 @@ public class RecipeDbHelper extends SQLiteOpenHelper {
                 + RecipeEntry.COLUMN_RECIPE_SERVINGS + " INTEGER NOT NULL, "
                 + RecipeEntry.COLUMN_RECIPE_CATEGORY + " TEXT, "
                 + RecipeEntry.COLUMN_RECIPE_YIELD + " INTEGER NOT NULL DEFAULT 0, "
+                + RecipeEntry.COLUMN_RECIPE_UNIT + " TEXT, "
                 + RecipeEntry.COLUMN_RECIPE_INSTRUCTIONS + " TEXT);";
 
         db.execSQL(SQL_CREATE_RECIPES_TABLE);

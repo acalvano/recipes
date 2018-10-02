@@ -80,14 +80,14 @@
             android:text="@string/recipe_category" />
 
 
-
-            <!-- Category drop-down spinner -->
+        <!-- Category drop-down spinner -->
         <Spinner
             android:id="@+id/spinner_category"
             android:layout_width="250dp"
-            android:layout_gravity="end"
             android:layout_height="48dp"
+            android:layout_gravity="end"
             android:paddingRight="16dp"
+            android:paddingBottom="16dp"
             android:spinnerMode="dropdown" />
 
     </LinearLayout>
@@ -95,33 +95,38 @@
     <!-- Yield category -->
     <LinearLayout
         android:id="@+id/container_yield"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="3">
 
         <!-- Label -->
         <TextView
             style="@style/CategoryStyle"
-            android:layout_gravity="left"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/recipe_yield" />
 
         <!-- Input fields -->
 
-            <!-- Weight field -->
-            <EditText
-                android:id="@+id/edit_recipe_yield"
-                android:layout_width="200dp"
-                android:layout_gravity="end"
-                style="@style/EditorFieldStyle"
-                android:hint="@string/hint_recipe_yield"
-                android:inputType="number"
-                android:textIsSelectable="true" />
+        <!-- Weight field -->
+        <EditText
+            android:id="@+id/edit_recipe_yield"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/hint_recipe_yield"
+            android:inputType="number"
+            android:textIsSelectable="true" />
 
-            <!-- Units for weight (kg) -->
-            <TextView
-                android:id="@+id/label_yield_units"
-                style="@style/EditorUnitsStyle"
-                android:text="@string/unit_recipe_yield" />
+        <!-- Units for weight (kg) -->
+        <Spinner
+            android:id="@+id/spinner_unit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:spinnerMode="dropdown" />
     </LinearLayout>
 
     <!-- Label -->
